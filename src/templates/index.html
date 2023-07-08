@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+
+<h2>List of pods</h2>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Namespace</th>
+        <th scope="col">IP</th>
+        <th scope="col">Node</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for pod in pods_list %}
+        <tr>
+        <td style="width: 10%;">{{ pod['name'] }}</td>
+        <td style="width: 10%;">{{ pod['namespace'] }}</td>
+        <td style="width: 10%;">{{ pod['ip'] }}</td>
+        <td style="width: 10%;">{{ pod['node'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

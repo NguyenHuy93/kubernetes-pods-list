@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pods-list
+  namespace: pods-list
+  labels:
+    app: pods-list
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pods-list
+  template:
+    metadata:
+      labels:
+        app: pods-list
+    spec:
+      containers:
+      - name: pods-list
+        image: pierrenguyen93/kubernetes-pods-list:latest
+      serviceAccountName: pods-list
